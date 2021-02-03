@@ -1,16 +1,18 @@
+setLocale = 'es' --set your own language (make sure the table is made on shared/locales.lua)
+
 Jobs = {
     ["Slaughterer"] = {
         jobRequired = false,
         jobName = "slaughterer",
         location = { 
             [1] = { --collect
-                coords = vector3(1183.9167480469,3581.064453125,34.505889892578),
+                coords = vector3(-66.64,6247.8,31.09),
                 blip = {
                     showBlip = true,
-                    blipName = "Chicken collect",
-                    sprite = 475,
+                    blipName = "Gallinero",
+                    sprite = 605,
                     color = 8,
-                    scale = 0.65,
+                    scale = 1.0,
                 },
                 marker = {
                     enable = true,
@@ -20,16 +22,16 @@ Jobs = {
                 },
                 draw3dtext = {
                     enable = true,
-                    text = "Press~g~E ~w~for collect some chicken",
+                    text = (messages[setLocale]['pressToInteract']..messages[setLocale]['jobAction1']..'gallina'),
                 },
                 item = {
                     process = "pickup", --dont touch
 
                     itemName = "alive_chicken",
-                    addCount = 1,
+                    addCount = 2,
                 },                
                 animation = {
-                    enable = true,
+                    enable = false,
                     animationFunction = function(ped)
                         animDict = "mp_car_bomb"
                         animName = "car_bomb_mechanic"
@@ -41,16 +43,16 @@ Jobs = {
                     end,
                 },
                 progressbar = {
-                    enable = true,
+                    enable = false,
                     progText = "Collecting...", 
-                    duration = 5000 
+                    duration = 10000 
                 }
             },
             [2] = { --process
-                coords = vector3(1182.3233642578, 3587.21875, 33.746761322021), 
+                coords = vector3(-85.31,6233.87,31.03), 
                 blip = {
-                    showBlip = true,
-                    blipName = "Chicken processing",
+                    showBlip = false,
+                    blipName = "Proceso Gallinero",
                     sprite = 475, 
                     color = 8,
                     scale = 0.65,
@@ -63,7 +65,7 @@ Jobs = {
                 },
                 draw3dtext = {
                     enable = true,
-                    text = "Press~g~E ~w~for process chicken",
+                    text = (messages[setLocale]['pressToInteract']..messages[setLocale]['jobAction2']..'gallina'),
                 },
                 item = {
                     process = "exchange", --dont touch
@@ -75,7 +77,7 @@ Jobs = {
                     requiredItem = "alive_chicken",
                 },
                 animation = {
-                    enable = true,
+                    enable = false,
                     animationFunction = function(ped)
                         animDict = "mp_car_bomb"
                         animName = "car_bomb_mechanic"
@@ -87,15 +89,15 @@ Jobs = {
                     end,
                 },
                 progressbar = {
-                    enable = true,
+                    enable = false,
                     progText = "Processing...",
                     duration = 5000
                 }
             },
             [3] = { --package
-                coords = vector3(1180.3918457031, 3591.4223632812, 33.566711425781), 
+                coords = vector3(-104.12,6206.33,31.0), 
                 blip = {
-                    showBlip = true,
+                    showBlip = false,
                     blipName = "Slaughterer package",
                     sprite = 475, 
                     color = 8,
@@ -109,7 +111,7 @@ Jobs = {
                 },
                 draw3dtext = {
                     enable = true,
-                    text = "Press~g~E ~w~for package slaughtered chickens",
+                    text = (messages[setLocale]['pressToInteract']..messages[setLocale]['jobAction3']..'gallinas'),
                 },
                 item = {
                     process = "package", --dont touch
@@ -133,20 +135,20 @@ Jobs = {
                     end,
                 },
                 progressbar = {
-                    enable = true,
+                    enable = false,
                     progText = "Packaging...",
                     duration = 5000
                 }
             },
 
             [4] = { --sell
-                coords = vector3(1177.7438964844, 3592.576171875, 33.646907806396), 
+                coords = vector3(846.39,-1992.85,29.6), 
                 blip = {
                     showBlip = true,
-                    blipName = "Slaughterer Sell",
-                    sprite = 475, 
+                    blipName = "Comprador de Gallinas",
+                    sprite = 365, 
                     color = 8,
-                    scale = 0.65,
+                    scale = 1.0,
                 },
                 marker = {
                     enable = true,
@@ -156,14 +158,14 @@ Jobs = {
                 },
                 draw3dtext = {
                     enable = true,
-                    text = "Press~g~E ~w~for sell packaged chickens",
+                    text = (messages[setLocale]['pressToInteract']..messages[setLocale]['jobAction4']..'gallina empacada'),
                 },
                 item = {
                     process = "sell", --dont touch
 
                     removeCount = 1,
                     requiredItem = "packaged_chicken",
-                    price = 100
+                    price = 14 --250 por carro 1000 por truck
                 },
                 animation = {
                     enable = true,
@@ -177,7 +179,7 @@ Jobs = {
                     end,
                 },
                 progressbar = {
-                    enable = true,
+                    enable = false,
                     progText = "Selling...",
                     duration = 5000
                 }

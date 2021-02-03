@@ -1,3 +1,7 @@
+--Fork Comment:
+This version is modified for limit system, has a locale table (WIP) feel free to contribute.
+
+--Original Readme:
 This script allows you to do jobs. The steps are simple.
 
 Step 1: Collect,

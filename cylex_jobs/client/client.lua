@@ -75,6 +75,7 @@ function main()
                                         ESX.TriggerServerCallback('cylex_jobs:checkCount', function(count)
                                             if v.location[i].item["process"] == "pickup" or count > v.location[i].item["removeCount"]-1 then
                                                 if v.location[i].animation["enable"] then
+                                                    print('animation client')
                                                     TriggerEvent("cylex_jobs:client:TriggerAnimation", ped, v.location[i].animation["animDict"], v.location[i].animation["animName"])
                                                 end
                                                 if v.location[i].progressbar["enable"] then
@@ -102,11 +103,11 @@ function main()
                                                     Citizen.CreateThread(function()
                                                         Citizen.Wait(v.location[i].progressbar["duration"])
                                                         ClearPedTasksImmediately(ped)
-                                                        TriggerServerEvent("cylex_jobs:server:process", v.location[i].item)
+                                                        TriggerServerEvent("cylex_jobs:server:process", coords, k, v, i)
                                                     end)
                                                 end
                                             else
-                                                exports["mythic_notify"]:SendAlert("error", "You don't have enough item!")
+                                                exports["mythic_notify"]:SendAlert("error", 'No tienes suficiente para vender')
                                             end
                                         end, v.location[i].item["requiredItem"])
                                     end
@@ -169,6 +170,9 @@ function refreshBlips()
         end
     end)
 end
+
+
+
 
 function deleteBlips()
 	for k,v in ipairs(blips) do
