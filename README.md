@@ -1,6 +1,8 @@
 --Fork Comment:
 This version is modified for limit system, has a locale table (WIP) feel free to contribute.
 
+forgot to mention both animations and progressbars are disabled on this fork.
+
 --Original Readme:
 This script allows you to do jobs. The steps are simple.
 
