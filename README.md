@@ -1,17 +1,32 @@
---Fork Comment:
+##  Fork Comments:
 This version is modified for limit system, has a locale table (WIP) feel free to contribute.
+Only one job like the main script.
+**Both animations and progressbars are disabled on this fork.**
 
-forgot to mention both animations and progressbars are disabled on this fork.
 
---Original Readme:
-This script allows you to do jobs. The steps are simple.
+## Issues:
+Animations not working
 
-Step 1: Collect,
-Step 2: Process,
-Step 3: Packing,
-Step 4: Selling.
+##To-Do
+config var for limit/weight
+more jobs
 
-Features:
+
+
+
+
+------------
+
+
+**Original Readme:**
+# This script allows you to do jobs. The steps are simple.
+
+**Step 1:** Collect
+**Step 2:** Process
+**Step 3:** Packing
+**Step 4:** Selling
+
+#### Features Features:
 Jobs required,
 Job required
 Really simple,
@@ -24,22 +39,22 @@ Item’s (Price, amount, required items for processing etc and more.),
 Coords,
 Blips.
 
-Known Issues:
+#### Known Issues:
 None.
 
-Dependencies:
+#### Dependencies:
 es_extended (Weight),
 mythic_notify,
 mythic_progbar.
 
-F.A.Q
+#### F.A.Q
 Why I should use cylex_jobs instead of esx_jobs or any other resources?: Well, it’s simple. You can add/remove jobs without any struggle. Everything is in config. It’s optimized.
 
-MS Statistics: 0.01 when you are not doing the job and 0.08 when you are doing the job.
-
-Is it realistic?: Yes. I tried to make it as realistic as possible for you, and your player’s enjoyment. There is animations, progressbar etc (You can set the texts .
+**MS Statistics: 0.01 when you are not doing the job and 0.08 when you are doing the job.
+**
+**Is it realistic?:** Yes. I tried to make it as realistic as possible for you, and your player’s enjoyment. There is animations, progressbar etc (You can set the texts .
 
 I created a job as “slaughterer” to give an example for how jobs work. You can copy and paste then BOOM!
 
-TODO:
+#### TODO:
 Police limit in illegal jobs (Config).
